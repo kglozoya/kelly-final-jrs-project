@@ -1,0 +1,28 @@
+.gamedetails-root {
+      
+        display: grid;
+        place-items: center;
+      
+        position: fixed;
+        inset: 0;
+      
+        background-color: rgba(0, 0, 0, 0.7);  
+      
+}
+
+.gamedetails-root button{
+    
+}
+
+.gamedetails-root .info-container{
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    white-space: wrap;
+    background-color: white;
+}
+
+.gamedetails-root .info-container .city{
+    text-transform: capitalize;
+}
+

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Merriweather+Sans:wght@800&family=Raleway:wght@400;500;800&display=swap');
+
+.homepage .hero-element-root{
+    font-family: 'Merriweather Sans', sans-serif;
+    
+}.hero-element-root {
+    position: relative;
+    align-items: center;
+    background-color: #00BF46;
+    /* height: 25rem; */
+  }
+  
+  .hero-element-root img {
+      
+      width: 100%;
+      display: block;
+      margin: auto;
+  }
+  
+  .hero-element-root .hero-element-text {
+    position: absolute;
+    bottom: -21px;
+    right: 16px;
+  
+    color: white;
+    font-size: 2.5rem;
+    line-height: 1.7rem;
+    text-align: right;
+    
+    padding: 1rem;
+  }
+  
+  
+  @media screen and (max-width: 750px) {
+    .hero-element-root .hero-element-text{
+      font-size: 2.25rem;
+      padding: .75rem;
+    }
+    .hero-element-root img {
+      width: 100%;
+      height: 25rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .hero-element-root .hero-element-text{
+      font-size: 1rem;
+      line-height: 1rem;
+      padding: .5rem;
+    }
+    .hero-element-root img {
+      width: 100%;
+      height: 15rem;
+    }
+  }

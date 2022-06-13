@@ -1,0 +1,9 @@
+.create-game-landing-root {
+    text-align: center;
+}
+.create-game-landing-root .form-container{
+    width: fit-content;
+    margin: auto;
+   border: solid red 2px;
+
+}

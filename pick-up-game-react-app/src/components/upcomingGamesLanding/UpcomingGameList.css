@@ -1,0 +1,8 @@
+.upcoming-game-list-root {
+border: solid red 2px;
+display: flex;
+gap: 10px;
+margin: 2rem;
+flex-wrap: wrap;
+justify-content: center;
+}

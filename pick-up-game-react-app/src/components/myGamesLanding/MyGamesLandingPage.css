@@ -1,0 +1,36 @@
+.mygames-landing-root .sport-groups {
+    border: none;
+    place-items: center;
+    background: white;
+    margin: 0;
+    
+    color: inherit;
+    border-radius: 4px 0 0 4px;
+    white-space: nowrap;
+    
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .mygames-landing-root .sport-groups .sport {
+    border: none;
+    background: none;
+    padding: 1.5rem 1rem;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 900;
+    text-transform: capitalize;
+    
+  }
+  .mygames-landing-root .sport-groups .sport:hover {
+    color: #f68687;
+  }
+  
+  .mygames-landing-root .sport-groups .sport:active {
+    color: black;
+  }
+  
+  .mygames-landing-root .sport-groups .sport.selected {
+      color: white;
+      background-color: #f68687;
+  }

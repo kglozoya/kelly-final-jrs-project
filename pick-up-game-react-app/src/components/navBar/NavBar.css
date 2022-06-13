@@ -1,0 +1,117 @@
+.nav-bar-root {
+    display: flex;
+    justify-content: space-between;
+
+    transition: 0.3s;
+    
+    background-color: none;
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(5px);
+    
+    height: fit-content;
+    
+    position: sticky;
+    top: 0;
+    
+    z-index: 1;
+}
+
+.nav-bar-root span{
+    user-select: none;
+}
+
+.nav-bar-root, 
+.nav-bar-root button{
+    font-size: 14pt;
+    font-family: inherit;
+    color: #3a3a3a;
+
+    font-weight: bolder;    
+}
+
+.nav-bar-root button {
+    
+    background: none;
+    border: none;
+    
+    padding: 1rem;
+    
+    cursor: pointer;   
+}
+
+.nav-bar-root button:hover {
+    background: none;
+    color: white;
+}
+
+.nav-bar-root .nav-bar-right #my-drinks{
+    text-decoration: none;
+}
+
+.nav-bar-root .nav-bar-left > div{
+    display: inline;
+} 
+
+.nav-bar-root .hoverable,
+.nav-bar-root .hidden-menu {
+  width: fit-content;
+  cursor: pointer;
+}
+
+/* .nav-bar-root .hoverable {
+  padding: .5rem;
+} */
+
+.nav-bar-root .dropdown-container{
+    position: relative;
+    width: fit-content;
+}
+
+.nav-bar-root .hidden-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+}
+
+.nav-bar-root .dropdown-container .dropdown-container>.hidden-menu{
+  left: 100%;
+  top: 0px;
+}
+
+.nav-bar-root .option {
+  background-color: #222;
+  padding: 0.75rem;
+  transition: .2s ease-in-out;
+  width: 100%;
+}
+
+.nav-bar-root .option:hover{
+  background-color: #f1f1f1;
+}
+
+
+.nav-bar-root .dropdown-container:hover>.hidden-menu {
+    display: block;
+}
+
+.nav-bar-root .dropdown-container .volleyball-link,
+.nav-bar-root .dropdown-container .new-game-link{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+@media screen and (max-width: 775px) {
+    .nav-bar-root {
+        padding: 0 1rem 0 1rem;         
+    }
+  }
+  
+@media screen and (max-width: 500px) {
+       .nav-bar-root button{
+        font-size: .8rem;
+        padding: 6pt;         
+    }
+    
+  }
+  

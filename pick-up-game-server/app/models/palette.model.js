@@ -1,14 +1,12 @@
 module.exports = mongoose => {
 
-    var schema = mongoose.Schema( {
+    var schema = mongoose.Schema({
         title: String,
-        colors: [ String ]
-    } );
+        colors: [String]
+    });
 
     const Palette = mongoose.model(
-        "palette", schema );
-
-    console.log( Palette.name );
+        "palette", schema);
 
     return Palette;
 };

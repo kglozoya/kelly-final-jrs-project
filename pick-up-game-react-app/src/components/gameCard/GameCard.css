@@ -1,0 +1,25 @@
+.gamecard-root{
+    border: solid black 2px;
+    width: fit-content;
+    min-width: 10rem;
+    padding: 1rem;
+}
+
+.gamecard-root {
+    /* text-transform: capitalize; */
+}
+
+.gamecard-root .skill-level.beginner {
+    background-color: purple;
+}
+
+.gamecard-root .skill-level.advanced {
+    background-color: blue;
+}
+
+.gamecard-root .skill-level.intermediate {
+    background-color: green;
+}
+.gamecard-root .skill-level.all-levels {
+    background-color: yellow;
+}
