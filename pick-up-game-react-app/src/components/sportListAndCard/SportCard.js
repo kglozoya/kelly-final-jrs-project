@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './SportCard.css'
 
 
-export default function SportCard ({img}) {
+export default function SportCard ( { icon, game } ) {
 
   const navigate = useNavigate();
 
@@ -16,12 +16,9 @@ export default function SportCard ({img}) {
     <div className="sportcard-root">
 
       <div className='sportcard-container' onClick={handleClicked}>
-        
-        <img src={img}></img>
-        <button type='button' >
-          Let's play
-        </button>
-        
+        <div className='sporcard icon'>{icon} </div>
+        <div className='sportcard name'>{game}</div>
+
       </div>
 
     </div>
@@ -29,3 +26,8 @@ export default function SportCard ({img}) {
 
   )
 }
+
+{/* <img src={img}></img> */ }
+{/* <button type='button' >
+  Let's play
+</button> */}

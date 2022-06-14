@@ -1,8 +1,21 @@
 .sportlist-root .card-container{
     display: flex;
     gap: 10px;
-    padding: 1rem 3rem;
+    padding: 1rem;
+    width: 80%;
+    margin: auto;
+    flex-wrap: wrap;
+    /* padding-bottom: 2rem; */
+    margin-top: 1rem;
+    position: relative;
+    
+    /* border-radius: 2rem 2rem 2rem 0; */
+    /* background-color: #3a3a3a; */
+    /* padding-top: 8rem; */
+    /* border-top-right-radius: 2rem; */
 }
+
+
 
 @media screen and (max-width: 600px) {
     .sportlist-root .card-container{

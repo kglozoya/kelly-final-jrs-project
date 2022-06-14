@@ -1,11 +1,34 @@
 .sportcard-root {
   position: relative;
   align-items: center;
-  width: 12rem;
+  width: 10rem;
   flex-grow: 1;
 }
 
-.sportcard-root .sportcard-container img {
+.sportcard-root .sportcard-container {
+  font-size: 5rem;
+  text-align: center;
+  color: var(--coral);
+  padding: 2rem 1rem 1.5rem 1rem;
+  background-color: var(--white);  
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.312);
+}
+
+.sportcard-root .sportcard-container .sportcard.name{
+  color: var(--navy);
+  font-size: 12pt;
+  padding-top: .5rem;
+}
+
+@media screen and (max-width: 800px) {
+ 
+  .sportcard-root {
+    width: 6rem;   
+  }
+}
+
+/* .sportcard-root .sportcard-container img {
   width: 100%;
   filter: brightness(0.6);
   transition: 0.25s ease-out;
@@ -49,4 +72,4 @@
     bottom: 25px;
     left: 20px;   
   }
-}
+} */

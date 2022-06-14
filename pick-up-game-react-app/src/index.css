@@ -1,25 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Raleway:wght@400;500;800&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Raleway:wght@400;500;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
 
 :root {
+  --green: #2BAE66FF;
+  
+  --white: #FBFCFC;
+  --yellow: #FDE24F;
+  --teal: #00EBC7;
+  --coral: #FF5470;
+  --navy: #00214D;
+  
+  --blue: #5463FF;
+  --grey: #ECECEC;
+  --mustard: #FFC300;
+  --red: #FF1818;
+
+  --greenBright: #00FFAB;
+  --greenDark: #14C38E;
+  --greenLime: #B8f1B0;
+  --greenLemon: #E3FCBF;
+  
+  --primary: var(--white);
+  --secondary: var(--coral);
+  --tertiary: var(--teal);
+  --quarternary: var(--yellow);
+  --textColor: var(--navy);
+  
+  font-family: 'Paytone One', sans-serif !important;
 }
 
 body {
   margin: 0;
   /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
-    /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif; */
-    font-family: 'Josefin Slab', serif; 
-    font-family: 'Raleway', sans-serif;
+  /* font-family: "Josefin Slab", serif;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  
-  
+  -moz-osx-font-smoothing: grayscale; */
+
   position: relative;
   min-height: 100vh;
+  background-color: var(--yellow);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

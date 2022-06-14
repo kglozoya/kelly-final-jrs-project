@@ -6,7 +6,8 @@ import { useLocalStorage } from '../../services/localstorage.service';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import logoLight from '../../assets/images/logo-light-green.jpg'
+import Grass1 from '../../assets/images/grassOne.jpg';
+import whistle2 from '../../assets/images/whistle2.jpg';
 
 
 
@@ -48,20 +49,19 @@ export default function NavBar () {
 
   const myGamesButton = (
     <Link to={"/my-games"}>
-      <button type='button'>My Pick Up Games</button>
+      <button type='button'>My Schedule</button>
     </Link>
   )
 
   return (
 
     <nav className="nav-bar-root">
-      <div className='nav-bar-left'>
+      {/* <div className='nav-bar-left'> */}
         <Link to={"/"}>
-          <button type='button'> <img src={logoLight} width="75px"></img> </button>
+          <button type='button'>Home</button>
           
-
         </Link>
-        <span>|</span>
+        {/* <span>|</span> */}
 
         <div className="dropdown-container">
           <button className='hoverable'> Sports </button>
@@ -80,15 +80,15 @@ export default function NavBar () {
         </div>
 
 
-        {player ? <span>|</span> : ''}
+        {/* {player ? <span>|</span> : ''} */}
         {player ? myGamesButton : ''}
-      </div>
-      <div className='nav-bar-right'>
+      {/* </div> */}
+      {/* <div className='nav-bar-right'> */}
         {player ? '' : signUpButton}
-        {player ? '' : <span>|</span>}
+        {/* {player ? '' : <span>|</span>} */}
         {player ? logoutButton : loginButton}
 
-      </div>
+      {/* </div> */}
     </nav>
 
   )

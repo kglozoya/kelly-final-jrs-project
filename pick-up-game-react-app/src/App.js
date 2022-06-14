@@ -85,7 +85,7 @@ function App () {
               <Route path="*" element={<div>404 - page does not exist</div>}></Route>
             </Routes>
           </div>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </ToastProvider>
 
