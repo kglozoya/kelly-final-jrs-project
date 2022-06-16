@@ -76,7 +76,7 @@ exports.getGamesByPlayerId = ( req, res ) => {
                 } )
         } else {
             // results.map()
-            console.log(results);
+            console.log('here?', results);
             res.send( {
                 // returns and array of game objects
                 games: results

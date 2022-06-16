@@ -1,25 +1,64 @@
-.gamecard-root{
-    border: solid black 2px;
-    width: fit-content;
-    min-width: 10rem;
-    padding: 1rem;
-}
-
 .gamecard-root {
-    /* text-transform: capitalize; */
+  width: fit-content;
+  min-width: 10rem;
+  font: inherit;
+  color: var(--navy);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+
+  text-transform: capitalize;
+  position: relative;
 }
 
-.gamecard-root .skill-level.beginner {
-    background-color: purple;
+.gamecard-root .details {
+  text-align: right;
+  font-size: 1.25rem;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  padding: 0.25rem 0.75rem;
+
+  cursor: pointer;
 }
 
-.gamecard-root .skill-level.advanced {
-    background-color: blue;
+.gamecard-root .details:hover {
+  color: var(--secondary);
 }
 
-.gamecard-root .skill-level.intermediate {
-    background-color: green;
+.gamecard-root .info .specifics {
+  margin-left: 1.1rem;
 }
-.gamecard-root .skill-level.all-levels {
-    background-color: yellow;
+
+.gamecard-root .info .specifics.attending {
+  margin-left: 0.5rem;
+}
+
+.gamecard-root .info {
+  text-align: left;
+  line-height: 2rem;
+  /* padding-left: .rem;; */
+  padding-bottom: 1rem;
+}
+
+.gamecard-root.beginner {
+  background-color: var(--navyShade);
+  /* color: var(--navy); */
+}
+
+.gamecard-root.intermediate {
+  background-color: var(--tealShade);
+  /* color: var(--teal); */
+}
+
+.gamecard-root.advanced {
+  background-color: var(--coralShade);
+  /* color: var(--coral); */
+}
+
+.gamecard-root.all-levels {
+  background-color: var(--yellowShade);
+  /* color: var(--yellow); */
 }

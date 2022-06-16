@@ -3,7 +3,7 @@ body::-webkit-scrollbar {
 }
 
 .general-content{
-  --footer-height: 8.3rem;
+  --footer-height: 5rem;
   padding-bottom: var(--footer-height);
 }
 

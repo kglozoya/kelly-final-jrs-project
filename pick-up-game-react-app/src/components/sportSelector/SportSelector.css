@@ -1,0 +1,39 @@
+.sport-groups {
+  border: none;
+  place-items: center;
+  background: var(--textColor);
+  margin: 0;
+
+  color: var(--white);
+  border-radius: 4px 0 0 4px;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sport-groups.short{
+    width: fit-content;
+}
+
+.sport-groups .sport {
+  border: none;
+  background: none;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.sport-groups .sport:hover {
+  color: var(--primary);
+}
+
+/*  .sport-groups .sport:active {
+    color: var(--textColor);
+  } */
+
+.sport-groups .sport.selected {
+  color: var(--white);
+  background-color: var(--secondary);
+  border-radius: 2rem;
+}

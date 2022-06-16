@@ -4,6 +4,11 @@ import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
 import MustSignInModal from '../modals/MustSignInModal';
 import { useToasts } from '../toasts/ToastService';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import './AddPlayerButton.css'
+
 
 export default function AddPlayerButton ( { gameId, setRosterCount, rosterCount, setShowSignInModal } ) {
 
@@ -21,7 +26,7 @@ export default function AddPlayerButton ( { gameId, setRosterCount, rosterCount,
       http.addPlayerToGame( gameId, playerId )
         .then( ( results ) => {
           setRosterCount( rosterCount + 1 )
-          toast.success(`You've been added to the roster`, 'See you there!')
+          toast.success( `You've been added to the roster`, 'See you there!' )
 
           setIsButtonDisabled( true )
           updateMyGames()
@@ -32,13 +37,13 @@ export default function AddPlayerButton ( { gameId, setRosterCount, rosterCount,
     }
   }
 
-
   return (
     <button type='button'
       onClick={onButtonClicked}
       disabled={isButtonDisabled}
-    >
-      Count me in!
+      className='add-player-button-root'>
+      <FontAwesomeIcon icon={faUserPlus} />
+      <span>Join game!</span>
     </button>
 
   )

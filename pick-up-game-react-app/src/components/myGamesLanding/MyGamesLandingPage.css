@@ -1,36 +1,74 @@
 .mygames-landing-root .sport-groups {
-    border: none;
-    place-items: center;
-    background: white;
-    margin: 0;
-    
-    color: inherit;
-    border-radius: 4px 0 0 4px;
-    white-space: nowrap;
-    
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .mygames-landing-root .sport-groups .sport {
-    border: none;
-    background: none;
-    padding: 1.5rem 1rem;
-    cursor: pointer;
-    font: inherit;
-    font-weight: 900;
-    text-transform: capitalize;
-    
-  }
-  .mygames-landing-root .sport-groups .sport:hover {
-    color: #f68687;
-  }
-  
-  .mygames-landing-root .sport-groups .sport:active {
-    color: black;
-  }
-  
-  .mygames-landing-root .sport-groups .sport.selected {
-      color: white;
-      background-color: #f68687;
-  }
+  border: none;
+  place-items: center;
+  background: var(--textColor);
+  margin: 0;
+
+  color: var(--white);
+  border-radius: 4px 0 0 4px;
+  white-space: nowrap;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.mygames-landing-root .sport-groups .sport {
+  border: none;
+  background: none;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.mygames-landing-root .sport-groups .sport:hover {
+  color: var(--primary);
+}
+
+/* .mygames-landing-root .sport-groups .sport:active {
+  color: var(--textColor);
+} */
+
+.mygames-landing-root .sport-groups .sport.selected {
+  color: var(--white);
+  background-color: var(--secondary);
+  border-radius: 2rem;
+}
+
+.mygames-landing-root .mygame-card-container {
+  background-color: var(--white);
+  color: var(--textColor);
+  border-radius: 2rem;
+  width: 55rem;
+  margin: 3rem auto;
+
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+
+  text-align: center;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  /* white-wrap: nowrap; */
+}
+
+.mygames-landing-root .post-button {
+  display: block;
+  margin: 3rem auto 3rem auto;
+  border: none;
+  background-color: var(--tertiary);
+  padding: 1rem 2rem;
+  font: inherit;
+  color: var(--textColor);
+  border-radius: 1.5rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.mygames-landing-root .post-button:hover {
+  /* color: var(--secondary); */
+  box-shadow: 2px 2px 2px #f1f1f1;
+}
+
+.mygames-landing-root .link {
+  text-decoration: none;
+}

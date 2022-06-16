@@ -3,6 +3,9 @@ import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
 import './UserLoginSignup.css'
 import { Link, useNavigate } from 'react-router-dom'
+import circlePinkGreen from '../../assets/images/logo-pink-green.png'
+import Toast from '../toasts/Toast';
+import { useToasts } from '../toasts/ToastService';
 
 
 export default function SignUp () {
@@ -10,6 +13,7 @@ export default function SignUp () {
   var http = useAxios();
   const localStorageService = useLocalStorage()
   var navigate = useNavigate();
+  const toast = useToasts();
 
   const [ formData, setFormData ] = useState( {
     firstName: '',
@@ -29,12 +33,12 @@ export default function SignUp () {
     http.createNewPlayer( formData )
       .then( results => {
         console.log( results )
-        alert("Account creation was a success!")
-        localStorageService.savePlayer(results.data.player)
-        navigate('/')
+        toast.success( "Account created!" )
+        localStorageService.savePlayer( results.data.player )
+        navigate( '/' )
       } ).catch( err => {
         console.error( err );
-        alert("Oops! Account with that email already exists. Try logging in instead")
+        toast.error( "Hmm, something went wrong.." )
       }
       )
   }
@@ -48,7 +52,7 @@ export default function SignUp () {
       ...formData,
       [ name ]: value
     } );
-    console.log(formData)
+    console.log( formData )
   }
 
 
@@ -56,9 +60,9 @@ export default function SignUp () {
     e.preventDefault()
     // could say instead ({...formData}) ?
     if ( formData.firstName && formData.lastName && formData.email && formData.password && checkIfEmailIsTaken ) {
-      
+
       attemptSignUp( formData );
-      
+
     }
   }
   // -----CHECK IF Email IS TAKEN --------------
@@ -68,18 +72,18 @@ export default function SignUp () {
       .then( ( results ) => {
         console.log( results )
         console.log( formData.email )
-        setIsEmailTaken(true)
+        setIsEmailTaken( true )
       } )
       .catch( ( err ) => {
         console.log( err )
         let statusCode = err.response.statusCode
-        if (statusCode == 404) {
-          setIsEmailTaken(false)
-        } else if (err.response.status == 401) {
-          setIsEmailTaken(true)
+        if ( statusCode == 404 ) {
+          setIsEmailTaken( false )
+        } else if ( err.response.status == 401 ) {
+          setIsEmailTaken( true )
         }
         else {
-          console.err(err)
+          console.err( err )
         }
       }
       )
@@ -96,53 +100,73 @@ export default function SignUp () {
 
   return (
     <div className='sign-up-form-root'>
-      <form className="sign-up-form"
-        onSubmit={handleFormSubmit}>
-        <h2>Charleston Pickup Games</h2>
-        <h1>Put me in, coach!</h1>
+
+
+      <div className='img-container'>
         
-        <div className='input-container'>
-          
-        <div className='first-name-input'>
+        <img src={circlePinkGreen} />
+        
+        <h1>Join the fun!</h1>
+        
+        <div className='cta-switch-container' >
+          <p >Already a member?</p>
+          <Link to="/login" className='link'>
+            Log in
+          </Link>
+        </div>
+        
+      </div>
+      
+        <form className="sign-up-form"
+          onSubmit={handleFormSubmit}>
+
+
+          <div className='first-name-input'>
             <label htmlFor="firstName">
+              First Name
             </label>
+            <br />
             <input
               type="firstName"
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
               ref={emailRef}
-              placeholder="First Name"
+              placeholder="Juana"
               id="firstName"
               required
             />
           </div>
-          
-        <div className='last-name-input'>
+
+          <div className='last-name-input'>
             <label htmlFor="lastName">
+              Last Name
             </label>
+            <br />
             <input
               type="lastName"
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
               ref={emailRef}
-              placeholder="Last Name"
+              placeholder="Smith"
               id="lastName"
               required
             />
           </div>
-          
+
           <div className='email-input'>
             <label htmlFor="email">
+              Email Address
             </label>
+            <br />
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               ref={emailRef}
-              placeholder="Email"
+              placeholder="juana101@email.com"
               id="email"
               required
             />
@@ -150,36 +174,31 @@ export default function SignUp () {
 
           <div className='password-input'>
             <label htmlFor="password">
+              Password
             </label>
+            <br />
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               ref={passwordRef}
-              placeholder="Password"
+              placeholder="*******"
               id="password"
               required
             />
+          <p id="password-instructions">--7  character minimum--</p>
           </div>
-          <div>Password must be at least 7 characters</div>
+
           <br />
+
           <button
             type="submit"
             className='sign-up-button'
           >Create my account!
           </button>
-          <br />
-          <br />
-          <div className='cta-switch-container' >
-            <p >Already a member?</p>
-            <Link to="/login" className='link'>
-              Get logged in
-            </Link>
-          </div>
-        </div>
-
-      </form>
+        </form>
+           
     </div>
   )
 }

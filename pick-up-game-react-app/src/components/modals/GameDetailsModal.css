@@ -1,28 +1,98 @@
 .gamedetails-root {
-      
-        display: grid;
-        place-items: center;
-      
-        position: fixed;
-        inset: 0;
-      
-        background-color: rgba(0, 0, 0, 0.7);  
-      
+  display: grid;
+  place-items: center;
+
+  position: fixed;
+  inset: 0;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  z-index: 1;
 }
 
-.gamedetails-root button{
-    
+.gamedetails-root .info-container {
+  display: flex;
+  flex-direction: column;
+
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  white-space: wrap;
+  background-color: var(--white);
+  border-radius: 2rem;
+  color: var(--secondary);
+  position: relative;
 }
 
-.gamedetails-root .info-container{
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    white-space: wrap;
-    background-color: white;
+.gamedetails-root .info-container h2 {
+  color: var(--textColor);
 }
 
-.gamedetails-root .info-container .city{
-    text-transform: capitalize;
+.gamedetails-root .info-container .grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
 }
 
+.gamedetails-root .info-container .grid .col-one {
+  grid-column: 1/2;
+  grid-row: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 9rem;
+}
+.gamedetails-root .info-container .grid .col-two {
+  grid-column: 2/2;
+  grid-row: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 9rem;
+  align-items: center;
+}
+
+.gamedetails-root .info-container b {
+  color: var(--textColor);
+  padding-bottom: 0.25rem;
+  padding-top: 0.5rem;
+}
+
+.gamedetails-root .info-container .close-details-modal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  padding: 0 0.5rem 0 0.5rem;
+  background-color: var(--white);
+  color: var(--textColor);
+  cursor: pointer;
+}
+
+.gamedetails-root .info-container .close-details-modal:hover {
+  color: var(--secondary);
+}
+
+.gamedetails-root .info-container a .contact-button,
+.gamedetails-root .info-container .delete-game-button {
+  color: var(--textColor);
+  background-color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: 0.25rem auto 1rem auto;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+}
+
+.gamedetails-root .info-container .delete-game-button {
+  margin: 1rem auto 1rem auto;
+}
+
+.gamedetails-root .info-container a .contact-button:hover,
+.gamedetails-root .info-container .delete-game-button {
+  box-shadow: 2px 2px 2px var(--white);
+}
+
+.gamedetails-root .info-container a {
+  text-decoration: none;
+}

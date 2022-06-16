@@ -1,68 +1,72 @@
 .nav-bar-root {
-    display: flex;
-    /* justify-content: space-between; */
-    justify-content: center;
+  display: flex;
+  justify-content: space-between;
 
-    transition: 0.3s;
-    
-    background-color: none;
-    background-color: var(--grey);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+  transition: 0.3s;
 
-    /* backdrop-filter: blur(5px); */
-    
-    height: fit-content;
-    width: 75vw;
-    margin: auto;
-    margin-top: 1.5rem;
-    border-radius: 10px;
-    /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.312); */
-    
-    position: sticky;
-    top: 0;
-    
-    z-index: 1;
+  background-color: none;
+  background-color: var(--white);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+
+  height: fit-content;
+  width: 75vw;
+  max-width: 55rem;
+
+  
+  margin: auto;
+  margin-top: 1.5rem;
+  border-radius: 10px;
+  padding: .25rem;
+
+  position: sticky;
+  top: 0;
+  
+  z-index: 1;
 }
 
-.nav-bar-root span{
-    user-select: none;
+.nav-bar-root .main-options{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  
+  align-items: center;
+  justify-content: space-evenly;
+  
+  
+  flex-grow: 2;
 }
 
-.nav-bar-root, 
-.nav-bar-root button{
-    font-size: 14pt;
-    font-family: inherit;
-    color: var(--navy);
+.nav-bar-root img {
+  height: 3.4rem;
+  padding-top: .25rem;
+  padding-left: .25rem;
+}
 
-    font-weight: bolder;    
+.nav-bar-root,
+.nav-bar-root button {
+  font-size: 14pt;
+  color: var(--textColor);
+  
+  font-weight: bolder;
+  font-family: "Raleway", sans-serif;
 }
 
 .nav-bar-root button {
-    
-    background: none;
-    border: none;
-    
-    padding: 1rem;
-    
-    cursor: pointer;   
-}
+  background: none;
+  border: none;
 
-.nav-bar-root img{
-  background-color: red;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-bar-root button:hover {
-    background: none;
-    color: white;
+  background: none;
+  color: var(--tertiary);
 }
 
-/* .nav-bar-root .nav-bar-right #my-drinks{
-    text-decoration: none;
-} */
-
-.nav-bar-root .nav-bar-left > div{
-    display: inline;
-} 
+.nav-bar-root .main-options > div {
+  display: inline;
+}
 
 .nav-bar-root .hoverable,
 .nav-bar-root .hidden-menu {
@@ -70,60 +74,54 @@
   cursor: pointer;
 }
 
-/* .nav-bar-root .hoverable {
-  padding: .5rem;
-} */
-
-.nav-bar-root .dropdown-container{
-    position: relative;
-    width: fit-content;
+.nav-bar-root .dropdown-container {
+  position: relative;
+  width: fit-content;
 }
 
 .nav-bar-root .hidden-menu {
   display: none;
   position: absolute;
+  top: 1.6rem;
   left: 0;
 }
 
-.nav-bar-root .dropdown-container .dropdown-container>.hidden-menu{
+.nav-bar-root .dropdown-container .dropdown-container > .hidden-menu {
   left: 100%;
   top: 0px;
 }
 
 .nav-bar-root .option {
-  background-color: #222;
+  background-color: var(--white);
   padding: 0.75rem;
-  transition: .2s ease-in-out;
-  width: 100%;
+  transition: 0.2s ease-in-out;
+  width: 80%;
 }
 
-.nav-bar-root .option:hover{
-  background-color: #f1f1f1;
+.nav-bar-root .option:hover {
+  color: var(--tertiary);
 }
 
-
-.nav-bar-root .dropdown-container:hover>.hidden-menu {
-    display: block;
+.nav-bar-root .dropdown-container:hover > .hidden-menu {
+  display: block;
 }
 
-.nav-bar-root .dropdown-container .volleyball-link,
-.nav-bar-root .dropdown-container .new-game-link{
-    text-decoration: none;
-    color: inherit;
+.nav-bar-root .my-schedule-link,
+.nav-bar-root .dropdown-container .sport-link,
+.nav-bar-root .dropdown-container .new-game-link {
+  text-decoration: none;
+  color: inherit;
 }
-
 
 @media screen and (max-width: 775px) {
-    .nav-bar-root {
-        padding: 0 1rem 0 1rem;         
-    }
+  .nav-bar-root {
+    padding: 0 1rem 0 1rem;
   }
-  
+}
+
 @media screen and (max-width: 500px) {
-       .nav-bar-root button{
-        font-size: .8rem;
-        padding: 6pt;         
-    }
-    
+  .nav-bar-root button {
+    font-size: 0.8rem;
+    padding: 6pt;
   }
-  
+}

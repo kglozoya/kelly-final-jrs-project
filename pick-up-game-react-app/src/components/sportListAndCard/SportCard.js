@@ -8,12 +8,10 @@ export default function SportCard ( { icon, game } ) {
   const navigate = useNavigate();
 
   function handleClicked () {
-    navigate( '/upcoming-games' )
+    navigate( `/sport/${game}` )
   }
 
   return (
-
-    <div className="sportcard-root">
 
       <div className='sportcard-container' onClick={handleClicked}>
         <div className='sporcard icon'>{icon} </div>
@@ -21,13 +19,5 @@ export default function SportCard ( { icon, game } ) {
 
       </div>
 
-    </div>
-
-
   )
 }
-
-{/* <img src={img}></img> */ }
-{/* <button type='button' >
-  Let's play
-</button> */}

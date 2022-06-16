@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router';
 import { useLocalStorage } from '../../services/localstorage.service';
 import Toast from '../toasts/Toast';
 import { useToasts } from '../toasts/ToastService';
+import circlePinkGreen from '../../assets/images/logo-green-then-pink.png'
 
 export default function Login () {
 
@@ -13,7 +14,7 @@ export default function Login () {
   const http = useAxios()
   const toast = useToasts();
   var navigate = useNavigate()
-  
+
   // const [ isLoading, setIsLoading ] = useState( false )
   const [ formData, setFormData ] = useState( {
     email: '',
@@ -38,13 +39,13 @@ export default function Login () {
     if ( formData.email && formData.password ) {
       http.login( formData )
         .then( results => {
-          alert( "Welcome Back!" )
+          toast.success( "Let's play pick up!", "Welcome Back" )
           localStorageService.savePlayer( results.data.player );
           navigate( '/' )
         } ).catch( err => {
           // setIsLoading( false )
           console.log( err )
-          Toast.in( "Oops, try again. Email or password was incorrect." )
+          toast.error( "Email or password was incorrect.", "Try again"  )
           setFormData( { email: '', password: '' } );
         } )
     }
@@ -61,16 +62,36 @@ export default function Login () {
   useEffect( () => {
     emailRef.current.focus()
   }, [] )
-  
+
   return (
     <div className='login-form-root'>
+
+
+      <div className='img-container'>
+
+        <img src={circlePinkGreen} />
+
+        <h1>Welcome back!</h1>
+
+        <div className="cta-switch-container">
+          <p>Not a member?</p>
+          <Link to="/signup" className='link'>
+            Sign up
+          </Link>
+        </div>
+
+      </div>
+
+
       <form className="login-form"
         onSubmit={handleFormSubmit}>
-        <h2> Welcome back </h2>
-        <h1>Let's find your account</h1>
+
+          <h2>Let's find your<br/>account</h2>
+          
         <div className='input-container'>
           <div className='login-input'>
             <label htmlFor="email">
+              Email Address
             </label>
             <input
               type="email"
@@ -78,7 +99,7 @@ export default function Login () {
               value={formData.email}
               onChange={handleChange}
               ref={emailRef}
-              placeholder="player@email.com"
+              placeholder="juana101@email.com"
               id="email"
               required
             />
@@ -86,6 +107,7 @@ export default function Login () {
 
           <div className='password-input'>
             <label htmlFor="password">
+              Password
             </label>
             <input
               type="password"
@@ -93,7 +115,7 @@ export default function Login () {
               value={formData.password}
               onChange={handleChange}
               ref={passwordRef}
-              placeholder="Password"
+              placeholder="*******"
               id="password"
               required
             />
@@ -104,14 +126,9 @@ export default function Login () {
             className='login-button'>
             Login
           </button>
-          <br />
-          <br />
-          <div className="cta-switch-container">
-            <p>Not a member?</p>
-            <Link to="/signup" className='link'>
-              Sign up now
-            </Link>
-          </div>
+
+
+
         </div>
 
       </form>

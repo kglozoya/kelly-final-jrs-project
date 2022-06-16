@@ -6,8 +6,8 @@ import { useLocalStorage } from '../../services/localstorage.service';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
-import Grass1 from '../../assets/images/grassOne.jpg';
-import whistle2 from '../../assets/images/whistle2.jpg';
+import circleLogoOnly from '../../assets/images/circle-only.png'
+
 
 
 
@@ -48,7 +48,7 @@ export default function NavBar () {
   )
 
   const myGamesButton = (
-    <Link to={"/my-games"}>
+    <Link to={"/my-games"} className='my-schedule-link'>
       <button type='button'>My Schedule</button>
     </Link>
   )
@@ -56,39 +56,41 @@ export default function NavBar () {
   return (
 
     <nav className="nav-bar-root">
-      {/* <div className='nav-bar-left'> */}
-        <Link to={"/"}>
-          <button type='button'>Home</button>
-          
-        </Link>
-        {/* <span>|</span> */}
+      <Link to={"/"}>
+        <img src={circleLogoOnly} />
+      </Link>
 
+      <div className='main-options'>
         <div className="dropdown-container">
-          <button className='hoverable'> Sports </button>
+
+          <button className='hoverable' onClick={()=>{navigate('/sport')}}> Sports </button>
+
           <div className="hidden-menu">
-            <Link to={"/upcoming-games"} className="volleyball-link">
+
+            <Link to={"/sport/basketball"} className="sport-link">
+              <div className="option">Basketball</div>
+            </Link>
+
+            <Link to={"/sport/volleyball"} className="sport-link">
               <div className="option">Volleyball</div>
             </Link>
-            <div className="option">Soccer</div>
-            <div className="option">Frisbee</div>
-            <div className="option">Basketball</div>
-            <div className="option">Cycling</div>
-            <Link to={"/create-game"} className="new-game-link">
-              <div className="option"> + New PickUp Game</div>
+
+            <Link to={"/sport/soccer"} className="sport-link">
+              <div className="option">Soccer</div>
+            </Link>
+
+            <Link to={"/sport/football"} className="sport-link">
+              <div className="option">Football</div>
             </Link>
           </div>
         </div>
 
-
-        {/* {player ? <span>|</span> : ''} */}
         {player ? myGamesButton : ''}
-      {/* </div> */}
-      {/* <div className='nav-bar-right'> */}
         {player ? '' : signUpButton}
-        {/* {player ? '' : <span>|</span>} */}
         {player ? logoutButton : loginButton}
 
-      {/* </div> */}
+      </div>
+
     </nav>
 
   )

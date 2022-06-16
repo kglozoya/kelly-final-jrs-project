@@ -7,7 +7,6 @@ import SignUp from './components/login&SignUp/SignUp';
 import MyGamesLandingPage from './components/myGamesLanding/MyGamesLandingPage';
 import UpcomingGamesLandingPage from './components/upcomingGamesLanding/UpcomingGamesLandingPage';
 import CreateGameLandingPage from './components/createGameLanding/CreateGameLandingPage';
-import GameDetailsModal from './components/modals/GameDetailsModal';
 import Homepage from './components/homepage/Homepage';
 import { createContext, useEffect, useState } from 'react';
 import { useLocalStorage } from './services/localstorage.service';
@@ -37,7 +36,7 @@ function App () {
   }
 
   function getGamesByPlayerId () {
-
+    
     var playerId = localStorageService.getPlayer()?.id;
 
     http.getGamesByPlayerId( playerId )
@@ -64,7 +63,7 @@ function App () {
 
   return (
 
-    <MyGamesContext.Provider value={{ myGames, updateMyGames }}>
+    <MyGamesContext.Provider value={{ myGames, updateMyGames, getGamesByPlayerId }}>
       <ToastProvider>
 
         <BrowserRouter>
@@ -78,14 +77,15 @@ function App () {
 
               <Route path="/my-games" element={<MyGamesLandingPage />}></Route>
 
-              <Route path="/upcoming-games" element={<UpcomingGamesLandingPage />}></Route>
-
+              <Route path="/sport" element={<UpcomingGamesLandingPage />}></Route>
+              <Route path="/sport/:sport" element={<UpcomingGamesLandingPage />}></Route>
+ 
               <Route path="/create-game" element={<CreateGameLandingPage />}></Route>
 
               <Route path="*" element={<div>404 - page does not exist</div>}></Route>
             </Routes>
           </div>
-          {/* <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </ToastProvider>
 

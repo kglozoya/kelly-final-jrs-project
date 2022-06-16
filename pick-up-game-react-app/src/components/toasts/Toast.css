@@ -1,6 +1,6 @@
-.toasts-container {
+.toast-parent {
     position: fixed;
-    top: 2rem;
+    top: 4rem;
     right: 0;
     z-index: 2;
   }
@@ -59,23 +59,23 @@
   }
   
   .toast-root.success {
-    --color: hsl(100, 85%, 35%);
-    --background-color: hsla(100, 75%, 75%, 0.95);
+    --color: var(--textColor);
+    --background-color: var(--tealShade);
   }
   
   .toast-root.info {
-    --color: hsl(225, 85%, 35%);
-    --background-color: hsla(225, 75%, 75%, 0.95);
+    --color: var(--textColor); 
+    --background-color: var(--navyShade);
   }
   
-  .toast-root.warning {
-    --color: hsl(55, 85%, 35%);
-    --background-color: hsla(55, 75%, 75%, 0.95);
+  .toast-root.warn {
+    --color: var(--primary);
+    --background-color: var(--yellowShade);
   }
   
   .toast-root.error {
-    --color: hsl(345, 85%, 35%);
-    --background-color: hsla(345, 75%, 75%, 0.95);
+    --color: var(--secondary);
+    --background-color: var(--coralShade);
   }
   
   /* animations for sticky / non-stick toasts */

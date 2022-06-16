@@ -1,50 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Raleway:wght@400;500;800&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Merriweather+Sans:wght@800&family=Raleway:wght@400;500;800&display=swap");
+
 
 :root {
-  --green: #2BAE66FF;
-  
-  --white: #FBFCFC;
-  --yellow: #FDE24F;
-  --teal: #00EBC7;
-  --coral: #FF5470;
-  --navy: #00214D;
-  
-  --blue: #5463FF;
-  --grey: #ECECEC;
-  --mustard: #FFC300;
-  --red: #FF1818;
+  --green: #2bae66ff;
 
-  --greenBright: #00FFAB;
-  --greenDark: #14C38E;
-  --greenLime: #B8f1B0;
-  --greenLemon: #E3FCBF;
+  --white: #fbfcfc;
+  --yellow: #fde24f;
+  --teal: #00ebc7;
+  --coral: #ff5470;
+  --navy: #00214d;
   
-  --primary: var(--white);
+  
+  --yellowShade: #FDF0CA;
+  --tealShade: #C6FCED;
+  --coralShade: #FFE4E5;
+  --navyShade: #E9EFFF;
+    
+
+  --blue: #5463ff;
+  --grey: #ececec;
+  --mustard: #ffc300;
+  --red: #ff1818;
+
+  --greenBright: #00ffab;
+  --greenDark: #14c38e;
+  --greenLime: #b8f1b0;
+  --greenLemon: #e3fcbf;
+
+    /* OPTION ONE */
+  
+  --primary: var(--yellow);
   --secondary: var(--coral);
   --tertiary: var(--teal);
-  --quarternary: var(--yellow);
   --textColor: var(--navy);
+
   
-  font-family: 'Paytone One', sans-serif !important;
+  /* OPTION TWO */
+  
+  /* --primary: var(--navy);
+  --secondary: var(--greenBright);
+  --tertiary: var(--greenLemon);
+  --textColor: var(--navy);
+   */
+  
+
+  
+    /* font-family: "Josefin Slab", serif;
+    font-family: "Raleway", sans-serif; */
+    font-family: "Merriweather Sans", sans-serif;
+
 }
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', */
-  /* 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif; */
-  /* font-family: "Josefin Slab", serif;
-  font-family: "Raleway", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   position: relative;
   min-height: 100vh;
-  background-color: var(--yellow);
+  background-color: var(--primary);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  border: none;
+  font: inherit;
+  display: block;
 }

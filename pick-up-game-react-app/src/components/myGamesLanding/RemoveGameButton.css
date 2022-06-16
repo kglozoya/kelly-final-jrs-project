@@ -1,0 +1,22 @@
+.remove-game-button-root button{
+    background-color: var(--white);
+    opacity: .9;
+
+    color: var(--navy);
+    
+    width: fit-content;
+    padding: .5rem 1rem;
+    border-radius: 1.5rem;
+    box-shadow: 1px 1px 3px inset rgba(0, 0, 0, 0.312);
+    cursor: pointer;
+}
+
+.remove-game-button-root button:hover{
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.312);
+    /* color: var(--secondary) */
+}
+
+.remove-game-button-root span{
+    margin-left: 10px;
+    color: var(--textColor);
+}

@@ -1,0 +1,36 @@
+
+.upcoming-games-root .text-card-container {
+  background-color: var(--white);
+  color: var(--textColor);
+  border-radius: 2rem;
+  width: 50rem;
+ margin: 3rem auto;
+
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+  
+  text-align: center;
+  overflow: hidden;
+}
+
+.upcoming-games-root h1{
+  text-transform: capitalize;
+}
+
+.upcoming-games-root .text-card-container .text-container{
+  line-height: .5rem;
+}
+
+.upcoming-games-root .text-card-container .post-button{
+    margin: 2.25rem auto 1rem auto;
+    background-color: var(--tertiary);
+    padding: 1rem 2rem;
+    color: var(--textColor);
+    border-radius: 1.5rem; 
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+    cursor: pointer;
+    transition: ease-in-out .3s;    
+}
+
+.upcoming-games-root .text-card-container .post-button:hover{
+box-shadow: 2px 2px 2px #f1f1f1;
+}

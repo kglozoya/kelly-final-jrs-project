@@ -36,9 +36,11 @@ CREATE TABLE `games`.`rsvp` (
 
   PRIMARY KEY (`id`),
   FOREIGN KEY(`gameId`)
-		REFERENCES `game`(`id`),
+		REFERENCES `game`(`id`)
+        ON DELETE CASCADE,
   FOREIGN KEY(`playerId`)
 		REFERENCES `player`(`id`)
+        ON DELETE CASCADE
 );
 
 INSERT INTO `games`.`player` 
@@ -58,13 +60,20 @@ VALUES
 INSERT INTO `games`.`game` 
   (`sport`, `dateTime`, `skillLevel`, `address1`, `city`, `locationNote`, `gender`, `gameCreator`)
 VALUES
-  ('volleyball', '2022-07-17 10:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'male', '780219d4-d79f-11ec-856c-6b8b7bc362a1'),
-  ('volleyball', '2022-07-25 17:00:00', 'advanced', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'female', '78021948-d79f-11ec-856c-6b8b7bc362a1'),
+  ('volleyball', '2022-07-17 10:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'men', '780219d4-d79f-11ec-856c-6b8b7bc362a1'),
+  ('volleyball', '2022-07-25 17:00:00', 'advanced', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'women', '78021948-d79f-11ec-856c-6b8b7bc362a1'),
   ('volleyball', '2022-07-30 20:00:00', 'all levels', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'coed', '780218da-d79f-11ec-856c-6b8b7bc362a1'),
-  ('volleyball', '2022-07-04 13:00:00', 'intermediate', '101 Artic Ave.', 'Folly Beach','Beach volleyball- court to the right of Folly pier', 'male', '7802186c-d79f-11ec-856c-6b8b7bc362a1'),
+  ('volleyball', '2022-07-04 13:00:00', 'intermediate', '101 Artic Ave.', 'Folly Beach','Beach volleyball- court to the right of Folly pier', 'men', '7802186c-d79f-11ec-856c-6b8b7bc362a1'),
   ('volleyball', '2022-07-12 18:00:00', 'all levels', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1'),
   ('volleyball', '2022-06-12 18:00:00', 'advanced', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1'),
-  ('volleyball', '2022-06-13 18:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1');
+  ('volleyball', '2022-06-13 18:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'Beach volleyball- court to the right of Folly pier', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1'),
+  ('basketball', '2022-07-17 10:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'next to parking lot', 'men', '780219d4-d79f-11ec-856c-6b8b7bc362a1'),
+  ('basketball', '2022-07-25 17:00:00', 'advanced', '101 Artic Ave.', 'Folly Beach', 'Beside the tennis court', 'women', '78021948-d79f-11ec-856c-6b8b7bc362a1'),
+  ('soccer', '2022-07-30 20:00:00', 'all levels', '101 Artic Ave.', 'Folly Beach', 'Field three', 'coed', '780218da-d79f-11ec-856c-6b8b7bc362a1'),
+  ('soccer', '2022-07-04 13:00:00', 'intermediate', '101 Artic Ave.', 'Folly Beach','On the beach', 'men', '7802186c-d79f-11ec-856c-6b8b7bc362a1'),
+  ('soccer', '2022-07-12 18:00:00', 'all levels', '101 Artic Ave.', 'Folly Beach', 'By the baseball stadium', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1'),
+  ('football', '2022-06-12 18:00:00', 'advanced', '101 Artic Ave.', 'Folly Beach', 'park to the right of the field', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1'),
+  ('football', '2022-06-13 18:00:00', 'beginner', '101 Artic Ave.', 'Folly Beach', 'game will take place on the beach', 'coed', '78021808-d79f-11ec-856c-6b8b7bc362a1');
 
 INSERT INTO `games`.`rsvp`
 (`gameId`, `playerId`)
