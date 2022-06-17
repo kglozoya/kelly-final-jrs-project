@@ -1,6 +1,6 @@
 import React from 'react'
 import './SportSelector.css'
-export default function SportSelector ( { sport, onSportSelected , short } ) {
+export default function SportSelector ( { sport, onSportSelected , round } ) {
 
     const SPORTS = [
         'basketball',
@@ -11,9 +11,10 @@ export default function SportSelector ( { sport, onSportSelected , short } ) {
 
 
     return (
-        <div className={`sport-groups ${short && 'short'}`}>
-            {SPORTS.map( ( _sport ) => (
-                <div className={`sport ${sport == _sport && `selected`}`}
+        <div className={`sport-groups ${round && 'round'}`}>
+            {SPORTS.map( ( _sport, i ) => (
+                <div key={i}
+                className={`sport ${sport == _sport && `selected`}`}
                     onClick={() => {
                         if ( onSportSelected ) {
                             onSportSelected( _sport );

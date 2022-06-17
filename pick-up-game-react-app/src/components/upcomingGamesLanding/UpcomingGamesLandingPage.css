@@ -1,36 +1,53 @@
+.upcoming-games-root {
+  padding: 2rem 5rem;
+}
 
 .upcoming-games-root .text-card-container {
   background-color: var(--white);
   color: var(--textColor);
   border-radius: 2rem;
-  width: 50rem;
- margin: 3rem auto;
-
+  
+  margin: 3rem auto;
+  max-width: 1000px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
   
   text-align: center;
+  padding-bottom: 2rem;
   overflow: hidden;
 }
 
-.upcoming-games-root h1{
+
+.upcoming-games-root h1 {
   text-transform: capitalize;
 }
 
-.upcoming-games-root .text-card-container .text-container{
-  line-height: .5rem;
+.upcoming-games-root .text-card-container .text-container {
+  line-height: 0.5rem;
 }
 
-.upcoming-games-root .text-card-container .post-button{
-    margin: 2.25rem auto 1rem auto;
-    background-color: var(--tertiary);
-    padding: 1rem 2rem;
-    color: var(--textColor);
-    border-radius: 1.5rem; 
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
-    cursor: pointer;
-    transition: ease-in-out .3s;    
+.upcoming-games-root .text-card-container .post-button {
+  margin: 2.25rem auto 1rem auto;
+  background-color: var(--tertiary);
+  padding: 1rem 2rem;
+  color: var(--textColor);
+  border-radius: 1.5rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
 }
 
-.upcoming-games-root .text-card-container .post-button:hover{
-box-shadow: 2px 2px 2px #f1f1f1;
+.upcoming-games-root .text-card-container .post-button:hover {
+  box-shadow: 2px 2px 2px #f1f1f1;
+}
+
+
+@media screen and (max-width: 600px) {
+  .upcoming-games-root .text-container img {
+    width: 10rem;
+  }
+  
+  .upcoming-games-root .text-card-container .post-button{
+   padding: .75rem 1rem;
+   border-radius: 1.5rem;
+ }
 }

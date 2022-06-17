@@ -1,7 +1,7 @@
 .sport-groups {
   border: none;
   place-items: center;
-  background: var(--textColor);
+  background: var(--navy);
   margin: 0;
 
   color: var(--white);
@@ -13,8 +13,13 @@
   justify-content: center;
 }
 
-.sport-groups.short{
-    width: fit-content;
+.sport-groups.short {
+  width: fit-content;
+  margin: auto;
+}
+
+.sport-groups.round {
+  border-radius: 2rem;
 }
 
 .sport-groups .sport {
@@ -28,12 +33,31 @@
   color: var(--primary);
 }
 
-/*  .sport-groups .sport:active {
-    color: var(--textColor);
-  } */
-
 .sport-groups .sport.selected {
   color: var(--white);
   background-color: var(--secondary);
   border-radius: 2rem;
+}
+
+@media screen and (max-width: 650px) {
+  .sport-groups.short {
+    flex-direction: column;
+    border-radius: 2rem;
+    margin: auto;
+  }
+
+  .sport-groups .sport {
+    padding: 1rem 0.5rem;
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 450px) {
+  .sport-groups .sport {
+    padding: 0.5rem 0.5rem !important;
+    font-size: 0.6em;
+  }
+  .sport-groups .sport.selected {
+    border-radius: 0 !important;
+    overflow: hidden !important;
+  }
 }

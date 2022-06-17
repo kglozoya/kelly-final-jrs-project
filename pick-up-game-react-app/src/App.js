@@ -12,6 +12,7 @@ import { createContext, useEffect, useState } from 'react';
 import { useLocalStorage } from './services/localstorage.service';
 import { useAxios } from './services/axios.service';
 import { ToastProvider } from './components/toasts/ToastService';
+import Loading from './components/loading/Loading';
 
 
 export const MyGamesContext = createContext( null );
@@ -81,6 +82,7 @@ function App () {
               <Route path="/sport/:sport" element={<UpcomingGamesLandingPage />}></Route>
  
               <Route path="/create-game" element={<CreateGameLandingPage />}></Route>
+              <Route path="/loading" element={<Loading />}></Route>
 
               <Route path="*" element={<div>404 - page does not exist</div>}></Route>
             </Routes>

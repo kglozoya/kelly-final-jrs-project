@@ -74,18 +74,20 @@ export default function UpcomingGamesLandingPage () {
         <div className='upcoming-games-root'>
           <div className='text-card-container'>
 
-            <SportSelector sport={sport} onSportSelected={( newSport ) => {
-              navigate( `/sport/${newSport}` );
-            }} />
+            <SportSelector sport={sport} 
+              onSportSelected={( newSport ) => {
+                navigate( `/sport/${newSport}` );
+              }} />
             <br />
             <div className='text-container'>
-              <img src={circlePink} />
+              <img src={circlePink} className='img' />
               <h1>{sport}</h1>
             </div>
 
             <button onClick={onAddGameClicked} className='post-button'><FontAwesomeIcon icon={faArrowRight} /> POST NEW GAME </button>
 
             <UpcomingGamesList key={games.id} games={games} sport={sport} />
+           
             {showSignInModal && <MustSignInModal
               setShowSignInModal={setShowSignInModal}
               setShowLandingPageModal={setShowLandingPageModal}

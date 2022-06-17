@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { MyGamesContext } from '../../App';
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -11,14 +12,8 @@ export default function CreateGameForm () {
   const localStorageService = useLocalStorage();
   const http = useAxios();
   const toast = useToasts();
-  const {getGamesByPlayerId} = useContext(MyGamesContext);
-
-  const SPORTS = [
-    'basketball',
-    'volleyball',
-    'soccer',
-    'football'
-  ]
+  const navigate = useNavigate();
+  const { getGamesByPlayerId } = useContext( MyGamesContext );
 
   const [ form, setForm ] = useState( {
     sport: 'volleyball',
@@ -75,10 +70,11 @@ export default function CreateGameForm () {
           locationNote: '',
           gender: ''
         } )
+        navigate( `/sport/${form.sport}` )
       } )
       .catch( ( err ) => {
         console.log( err.response.data.message )
-        toast.error( `Hmm, something's not right` )
+        toast.error( `Please fill in all required fields` )
       } )
   }
 
@@ -108,10 +104,10 @@ export default function CreateGameForm () {
       {/* SPORT CHOICE INPUT */}
       <div className='form-section one'>
         <p>First, choose a sport</p>
-        
-        
-        <SportSelector onSportSelected={sportSelected} sport={form.sport} short={true} />
-        
+
+
+        <SportSelector onSportSelected={sportSelected} sport={form.sport} round={true} />
+
       </div>
 
       <div className='form-section instructions'> Now, add the details</div>
@@ -120,7 +116,7 @@ export default function CreateGameForm () {
 
         {/* DATE INPUT */}
         <div className="form-section r-one c-one">
-          <label htmlFor='date'> Date</label>
+          <label htmlFor='date' className='required'>Date</label>
           <input
             id="date"
             type="date"
@@ -128,34 +124,34 @@ export default function CreateGameForm () {
             value={form.date}
             min="2022-07-01"
             onChange={handleChange}
-          // required
           />
         </div>
 
         {/* TIME INPUT */}
         <div className='form-section r-one c-two'>
-          <label htmlFor='time'>Time</label>
+          <label htmlFor='time' className='required'>Time</label>
           <input
             id='time'
             type="time"
             name="time"
             value={form.time}
             step="300"
-            onChange={handleChange} />
+            onChange={handleChange}
+          />
 
         </div>
 
         {/* SKILL LEVEL INPUT */}
         <div className='form-section r-two c-one'>
 
-          <label htmlFor='skillLevel'>Skill level</label>
+          <label htmlFor='skillLevel' className='required'>Skill level</label>
           <select
             id="skillLevel"
             name="skillLevel"
             value={form.skillLevel}
             onChange={handleChange}
           >
-            <option value='skill-level' selected hidden></option>
+            <option value='' hidden></option>
             <option value='beginner'>Beginner</option>
             <option value='intermediate'>Intermediate</option>
             <option value='advanced'>Advanced</option>
@@ -166,14 +162,14 @@ export default function CreateGameForm () {
         {/* GENDER LEVEL INPUT */}
         <div className='form-section r-two c-two'>
 
-          <label htmlFor='gender'>Men/Women/Coed</label>
+          <label htmlFor='gender' className='required'>Men/Women/Coed</label>
           <select
             id='gender'
             name="gender"
             value={form.gender}
             onChange={handleChange}
           >
-            <option value='gender' selected hidden></option>
+            <option value='' disabled hidden></option>
             <option value='coed'>Coed</option>
             <option value='women'>Women</option>
             <option value='men'>Men</option>
@@ -182,14 +178,14 @@ export default function CreateGameForm () {
 
         {/* CITY INPUT */}
         <div className="form-section r-three c-one">
-          <label htmlFor='city'>Location</label>
+          <label htmlFor='city' className='required'>Location</label>
           <select
             id="city"
             name="city"
             value={form.city}
             onChange={handleChange}
           >
-            <option value='empty' selected hidden></option>
+            <option value='' hidden></option>
             <option value='downtown'>Downtown</option>
             <option value='mount-pleasant'>Mount Pleasant</option>
             <option value='north-charleston'>North Charleston</option>
@@ -202,8 +198,9 @@ export default function CreateGameForm () {
 
         {/* ADDRESS INPUT */}
         <div className='form-section r-three c-two'>
-          <label htmlFor='address'>Street address</label>
-          <textarea
+          <label htmlFor='address' className='required'>Street address</label>
+          <input
+            type="text"
             id="address"
             name="address1"
             value={form.address1}
@@ -211,8 +208,7 @@ export default function CreateGameForm () {
             rows="1"
             columns="1"
             placeholder='123 Abc Street'
-          >
-          </textarea>
+          />
         </div>
 
       </div>

@@ -17,6 +17,7 @@
   background-color: var(--white);
   border-radius: 2rem;
   position: relative;
+  text-align: center;
 }
 
 .must-sign-in-root .info-container .not-a-member {

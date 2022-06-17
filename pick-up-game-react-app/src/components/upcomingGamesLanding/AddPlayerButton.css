@@ -3,10 +3,11 @@
     background-color: var(--white);
     color: var(--textColor);
     width: fit-content;
-    margin-left: .35rem;
+    margin-left: .5rem;
     padding: .5rem 1rem;
     border-radius: 1.5rem;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
+    cursor: pointer;
 }
 
 .add-player-button-root:hover{

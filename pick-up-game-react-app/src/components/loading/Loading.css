@@ -1,20 +1,41 @@
-.loading{
-    height: 4rem;
-    width: 4rem;
-    border: solid #fbfcfc94 1rem;
-    border-right: solid var(--tertiary) 1rem;
-    border-radius: 50%;
-    
-    margin: 20% auto 0 auto;
-    
-    animation: rotation .7s infinite linear;
+
+.loading-container {
+  height: 8rem;
+  width: 8rem;
+  margin: 30% auto;
 }
 
-@keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+.loading > .spin {
+  font-size: 7rem;
+  color: orange;
+  background-color: rgba(4, 4, 4, 0.877);
+  border-radius: 50%;
+}
+
+.bounce {
+  animation: bounce 0.4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.spin{
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
   }
+  to {
+    transform: translate3d(0, -100px, 0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

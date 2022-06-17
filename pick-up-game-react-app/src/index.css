@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Merriweather+Sans:wght@800&family=Raleway:wght@400;500;800&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 :root {
   --green: #2bae66ff;
@@ -48,6 +48,7 @@
   
     /* font-family: "Josefin Slab", serif;
     font-family: "Raleway", sans-serif; */
+    font-family: 'Pacifico', cursive;
     font-family: "Merriweather Sans", sans-serif;
 
 }

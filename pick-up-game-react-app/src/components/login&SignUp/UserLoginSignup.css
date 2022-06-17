@@ -1,33 +1,29 @@
-.sign-up-form-root{
+.sign-up-form-root {
   background-color: var(--tertiary);
   color: var(--textColor);
 }
 
-.login-form-root{
+.login-form-root {
   background-color: var(--secondary);
   color: var(--textColor);
 }
 
-
 .sign-up-form-root,
 .login-form-root {
-
   border-radius: 2rem;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
   display: flex;
   justify-content: space-between;
-  width: 40rem;
-  height: 29rem;
   margin: 3rem auto;
   overflow: hidden;
+  max-width: 40rem;
 }
-
 
 .sign-up-form-root .img-container .link {
   color: var(--secondary);
 }
 
-.login-form-root .img-container .link{
+.login-form-root .img-container .link {
   color: var(--textColor);
 }
 
@@ -40,7 +36,7 @@
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.312);
 }
 
-.login-form-root .img-container .link:hover, 
+.login-form-root .img-container .link:hover,
 .sign-up-form-root .img-container .link:hover {
   box-shadow: 2px 2px 10px var(--white);
 }
@@ -49,7 +45,7 @@
 .sign-up-form-root .img-container {
   margin: 1.5rem auto;
   text-align: center;
-  padding-bottom: 2rem;
+  padding: 3rem;
 }
 
 .login-form-root .login-form,
@@ -58,10 +54,9 @@
   flex-direction: column;
   padding: 3rem;
   background-color: var(--white);
-  width: 40%;
 }
 
-.login-form-root .login-form h2{
+.login-form-root .login-form h2 {
   text-align: center;
   padding-bottom: 1rem;
 }
@@ -72,50 +67,55 @@
   padding-right: 3rem;
 }
 
-
-.login-form-root .login-form  input,
+.login-form-root .login-form input,
 .sign-up-form-root .sign-up-form input {
   border: none;
   outline: solid var(--grey);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  margin-bottom: .75rem;
-  margin-top: .25rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.25rem;
   text-align: left;
 }
 
-.sign-up-form-root .sign-up-form p{
+.sign-up-form-root .sign-up-form p {
   font-size: 8pt;
   padding-left: 1.2rem;
   margin-bottom: 0;
-  margin-top: -.3rem;
-
+  margin-top: -0.3rem;
 }
 
-.login-form-root .login-button{
+.login-form-root .login-button {
   background-color: var(--tertiary);
   padding: 1rem 4rem;
 }
 
-.sign-up-form-root .sign-up-button{
+.sign-up-form-root .sign-up-button {
   background-color: var(--secondary);
   padding: 1rem 2rem;
 }
-
 
 .login-form-root .login-button,
 .sign-up-form-root .sign-up-button {
   margin: 1rem auto 0 auto;
   color: var(--textColor);
-  border-radius: 1.5rem; 
+  border-radius: 1.5rem;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.312);
   cursor: pointer;
-  transition: ease-in-out .3s;
+  transition: ease-in-out 0.3s;
 }
 
-
 .login-form-root .login-button:hover,
-.sign-up-form-root .sign-up-button:hover{
+.sign-up-form-root .sign-up-button:hover {
   box-shadow: 2px 2px 10px var(--white);
 }
 
+@media screen and (max-width: 600px) {
+  .sign-up-form-root,
+  .login-form-root {
+    width: fit-content;
+    height: 100%;
+    flex-direction: column;
+  }
+
+}

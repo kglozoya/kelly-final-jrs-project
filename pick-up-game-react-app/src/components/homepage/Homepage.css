@@ -74,4 +74,7 @@ box-shadow: 2px 2px 2px #f1f1f1;
   .hero-element-root .hero-element-text h1{
     font-size: larger;
   }
+  .hero-element-root .hero-element-text p{
+    line-height: 1em;;
+  }
 }

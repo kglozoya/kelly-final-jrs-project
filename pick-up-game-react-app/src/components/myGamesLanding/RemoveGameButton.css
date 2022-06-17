@@ -3,7 +3,8 @@
     opacity: .9;
 
     color: var(--navy);
-    
+    margin-left: .5rem;
+
     width: fit-content;
     padding: .5rem 1rem;
     border-radius: 1.5rem;

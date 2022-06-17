@@ -3,12 +3,12 @@
   min-width: 10rem;
   font: inherit;
   color: var(--navy);
-  padding: 1.5rem;
+  padding: 1.25rem;
   border-radius: 2rem;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.312);
 
   text-transform: capitalize;
-  position: relative;
+  position: relative;  
 }
 
 .gamecard-root .details {

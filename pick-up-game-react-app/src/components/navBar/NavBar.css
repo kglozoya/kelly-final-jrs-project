@@ -71,6 +71,7 @@
 .nav-bar-root .hoverable,
 .nav-bar-root .hidden-menu {
   width: fit-content;
+  padding: 10px;
   cursor: pointer;
 }
 

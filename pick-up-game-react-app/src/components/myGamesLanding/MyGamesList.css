@@ -1,7 +1,10 @@
 .my-games-list-root{
     display: flex;
     gap: 10px;
-    margin: 2rem;
+    width: fit-content;
     flex-wrap: wrap;
     justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+    padding: 1rem;
 }

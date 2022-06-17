@@ -16,7 +16,6 @@ export default function NavBar () {
 
   const http = useAxios();
   const navigate = useNavigate();
-  // const { playerId } = useParams();
   const localStorageService = useLocalStorage();
   const player = localStorageService.getPlayer();
 
