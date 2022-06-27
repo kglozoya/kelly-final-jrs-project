@@ -21,7 +21,7 @@ export default function Homepage () {
   
   function onAddGameClicked () {
     if ( player ) {
-      navigate( '/create-game' )
+      navigate( '/create-game/basketball' )
     } else {
       setShowSignInModal( true )
     }

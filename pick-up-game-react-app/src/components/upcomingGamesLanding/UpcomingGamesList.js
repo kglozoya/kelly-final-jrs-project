@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { MyGamesContext } from '../../App'
 import GameCard from '../gameCard/GameCard'
 import './UpcomingGameList.css'
 
 export default function UpcomingGamesList ( { games, sport } ) {
 
   var currentTime = new Date().getTime()
-
+  const { updateMyGames } = useContext( MyGamesContext )
 
   //-------------- putting games in accendeing order and filtering out past games---------/
   if ( games.length > 0 ) {
@@ -25,7 +26,9 @@ export default function UpcomingGamesList ( { games, sport } ) {
     ) )
   }
 
-
+useEffect(()=>{
+  updateMyGames()
+}, [])
 
 
   return (

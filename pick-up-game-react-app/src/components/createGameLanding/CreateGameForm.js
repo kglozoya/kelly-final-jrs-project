@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { MyGamesContext } from '../../App';
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -13,10 +13,11 @@ export default function CreateGameForm () {
   const http = useAxios();
   const toast = useToasts();
   const navigate = useNavigate();
+  const { sport } = useParams();
   const { getGamesByPlayerId } = useContext( MyGamesContext );
 
   const [ form, setForm ] = useState( {
-    sport: 'volleyball',
+    sport,
     date: '',
     time: '',
     skillLevel: '',
@@ -61,7 +62,7 @@ export default function CreateGameForm () {
         getGamesByPlayerId()
         toast.success( 'New game created', 'You did it!' )
         setForm( {
-          sport: 'volleyball',
+          sport: '',
           date: '',
           time: '',
           skillLevel: '',
@@ -93,7 +94,9 @@ export default function CreateGameForm () {
     postNewGame()
   }
 
-
+  useEffect( () => {
+    sportSelected( sport )
+  }, [] )
 
 
   return (

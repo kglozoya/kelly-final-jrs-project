@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 import circleLogoOnly from '../../assets/images/circle-only.png'
+import { useToasts } from '../toasts/ToastService';
 
 
 
@@ -18,9 +19,11 @@ export default function NavBar () {
   const navigate = useNavigate();
   const localStorageService = useLocalStorage();
   const player = localStorageService.getPlayer();
+  const toast = useToasts();
 
   function onLogoutClicked () {
     localStorageService.removePlayer()
+    toast.info("","see you next time!")
     navigate( '/' )
   }
 

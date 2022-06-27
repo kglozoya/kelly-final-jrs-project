@@ -1,25 +1,69 @@
-
 .loading-container {
   height: 8rem;
   width: 8rem;
-  margin: 30% auto;
+  margin: auto;
+  position: relative;
 }
 
-.loading > .spin {
+.loading {
+  position: absolute;
+  top: 15rem;
+}
+
+.loading .basketball {
   font-size: 7rem;
   color: orange;
   background-color: rgba(4, 4, 4, 0.877);
   border-radius: 50%;
 }
 
-.bounce {
+.loading .volleyball {
+  font-size: 7rem;
+  color: #f1f1f1;
+  background-color: rgba(28, 28, 28, 0.917);
+  border-radius: 50%;
+}
+
+.loading .futbol {
+  font-size: 7rem;
+  color: rgba(14, 14, 14, 0.938);
+  background-color: #f1f1f1;
+  border-radius: 50%;
+}
+.loading .football {
+  font-size: 7rem;
+  color: rgb(124, 34, 34);
+  border-radius: 150% 60% 150% 60%;
+  background-color: white;
+}
+
+
+.loading .bounce {
   animation: bounce 0.4s;
   animation-direction: alternate;
   animation-iteration-count: infinite;
 }
 
-.spin{
-  animation: rotate 3s linear infinite;
+.spin.basketball,
+.spin.volleyball,
+.spin.futbol,
+.spin.football {
+  animation: spin 2s linear infinite;
+}
+
+.loading .travel {
+  animation: travel 2s infinite;
+  animation-direction: alternate;
+}
+
+/* .loading .travel2 {
+  animation: travel2 2s infinite;
+  animation-direction: alternate;
+} */
+
+.loading .diagonal {
+  animation: diagonal 1.75s infinite;
+  animation-direction: alternate;
 }
 
 @keyframes bounce {
@@ -31,11 +75,38 @@
   }
 }
 
-@keyframes rotate {
+@keyframes travel {
+  from {
+    transform: translate3d(-300px, 0, 0);
+  }
+  to {
+    transform: translate3d(300px, 0, 0);
+  }
+}
+
+@keyframes travel2 {
+  from {
+    transform: translate3d(-200px, 100px, 0);
+  }
+  to {
+    transform: translate3d(200px, -100px, 0);
+  }
+}
+
+@keyframes spin {
   from {
     transform: rotate(0);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes diagonal {
+  from {
+    transform: translate3d(-200px, 0, 0);
+  }
+  to {
+    transform: translate3d(300px, -150px, 0);
   }
 }

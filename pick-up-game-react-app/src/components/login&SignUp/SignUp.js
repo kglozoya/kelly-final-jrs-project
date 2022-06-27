@@ -24,6 +24,7 @@ export default function SignUp () {
 
   const [ isEmailTaken, setIsEmailTaken ] = useState( true );
 
+  const firstNameRef = useRef( null );
   const emailRef = useRef( null );
   const passwordRef = useRef( null );
   const timeoutRef = useRef( null );
@@ -95,7 +96,7 @@ export default function SignUp () {
   }, [ formData.email ] )
 
   useEffect( () => {
-    emailRef.current.focus()
+    firstNameRef.current.focus()
   }, [] )
 
   return (
@@ -131,7 +132,7 @@ export default function SignUp () {
               name="firstName"
               value={formData.firstName}
               onChange={handleChange}
-              ref={emailRef}
+              ref={firstNameRef}
               placeholder="Juana"
               id="firstName"
               required
@@ -148,7 +149,7 @@ export default function SignUp () {
               name="lastName"
               value={formData.lastName}
               onChange={handleChange}
-              ref={emailRef}
+              // ref={emailRef}
               placeholder="Smith"
               id="lastName"
               required

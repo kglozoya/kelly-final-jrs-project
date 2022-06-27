@@ -1,4 +1,4 @@
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faShareFromSquare, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { useAxios } from '../../services/axios.service'
@@ -53,7 +53,7 @@ export default function GameDetailsModal ( { gameId, address1, city, dateTime, g
         <div className="grid">
 
           <div className="col-one">
-            <b>When</b> {dateTime.toLocaleString( 'en-EN', date )}
+            <b>When</b>{dateTime.toLocaleString( 'en-EN', date )}
             <br />
             {dateTime.toLocaleString( 'en-EN', time )}
             <b className='city'>City</b> {city}
@@ -63,15 +63,17 @@ export default function GameDetailsModal ( { gameId, address1, city, dateTime, g
 
           <div className="col-two">
             <b>Skill Level</b> {skillLevel}
-            <b>Male/Female/Coed </b> {gender}
+            <b>Men/Women/Coed </b> {gender}
+           <br/>
 
             {playerId == gameCreatorId
               ? <button onClick={() => { deleteGame( gameId ) }} className="delete-game-button"> Delete Game</button>
-              : <div>
-                <b>Game Contact</b>
+              : <div className='game-contact'>
+                <br/>
+                <b>Contact game creator <FontAwesomeIcon icon={faShareFromSquare}/></b>
                 <a href={`mailto:${email}`} >
                   <button type='button' className='contact-button'>
-                    {firstName} {lastName}
+                    {`email ${firstName}`}
                   </button>
                 </a>
               </div>

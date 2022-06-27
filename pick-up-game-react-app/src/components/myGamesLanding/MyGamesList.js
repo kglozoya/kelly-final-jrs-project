@@ -1,11 +1,16 @@
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { MyGamesContext } from '../../App'
 import GameCard from '../gameCard/GameCard'
 import './MyGamesList.css'
 
 export default function MyGamesList ( { myGames, sport } ) {
+
+  const { updateMyGames } = useContext( MyGamesContext );
+  var currentTime = new Date().getTime();
+  var myCurrentGames = [];
 
   if ( myGames.length > 0 ) {
 
@@ -14,14 +19,18 @@ export default function MyGamesList ( { myGames, sport } ) {
     } )
   }
 
-  var currentTime = new Date().getTime()
-  var myCurrentGames = [];
 
   if ( myGames.length > 0 ) {
     myCurrentGames = myGames.filter( ( g ) => (
       ( g.dateTime.getTime() >= currentTime ) && ( g.sport == sport )
     ) )
   }
+  
+  useEffect(() => {
+    updateMyGames()
+    console.log(myCurrentGames)
+  }, [])
+  
 
 
   return (
@@ -33,7 +42,7 @@ export default function MyGamesList ( { myGames, sport } ) {
 
             <h1>Not signed up for any  <br /> {sport} games... <br />yet! </h1>
 
-            <Link to={'/create-game'} className="link">
+            <Link to={ `/create-game/${sport}`} className="link">
               <button className='post-button'><FontAwesomeIcon icon={faArrowRight} /> POST NEW GAME </button>
             </Link>
 

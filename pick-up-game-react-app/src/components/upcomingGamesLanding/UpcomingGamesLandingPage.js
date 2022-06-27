@@ -12,19 +12,18 @@ import './UpcomingGamesLandingPage.css'
 import Loading from '../loading/Loading';
 import SportSelector from '../sportSelector/SportSelector';
 
-export const AllGamesContext = createContext(null );
+export const AllGamesContext = createContext( null );
 
 export default function UpcomingGamesLandingPage () {
 
   const http = useAxios();
-  const [ games, setGames ] = useState( [] );
   const navigate = useNavigate();
-  const localStorageService = useLocalStorage();
-
   const { sport } = useParams();
-
+  const localStorageService = useLocalStorage();
   var player = localStorageService.getPlayer()
 
+
+  const [ games, setGames ] = useState( [] );
   const [ showSignInModal, setShowSignInModal ] = useState( false );
   const [ showLandingPageModal, setShowLandingPageModal ] = useState( false );
   const [ isLoading, setIsLoading ] = useState( true );
@@ -45,13 +44,13 @@ export default function UpcomingGamesLandingPage () {
       .then( () => {
         setTimeout( () => {
           setIsLoading( false )
-        }, 800 )
+        }, 1500 )
       } )
   }
 
   function onAddGameClicked () {
     if ( player ) {
-      navigate( '/create-game' )
+      navigate( `/create-game/${sport}` )
     } else {
       setShowSignInModal( true )
     }
@@ -61,8 +60,10 @@ export default function UpcomingGamesLandingPage () {
     getAllGames()
   }, [] );
 
+
+
+
   if ( isLoading ) {
-    console.log('testing');
     return (
       <Loading />
     )
@@ -74,20 +75,24 @@ export default function UpcomingGamesLandingPage () {
         <div className='upcoming-games-root'>
           <div className='text-card-container'>
 
-            <SportSelector sport={sport} 
+            <SportSelector sport={sport}
               onSportSelected={( newSport ) => {
                 navigate( `/sport/${newSport}` );
               }} />
             <br />
             <div className='text-container'>
-              <img src={circlePink} className='img' />
-              <h1>{sport}</h1>
+              {/* <img src={circlePink} className='img' /> */}
+              {sport
+                ? <h1>{sport}</h1>
+                : <div> <br /> <h1>Add a game!</h1> </div>
+              }
+
             </div>
 
             <button onClick={onAddGameClicked} className='post-button'><FontAwesomeIcon icon={faArrowRight} /> POST NEW GAME </button>
 
             <UpcomingGamesList key={games.id} games={games} sport={sport} />
-           
+
             {showSignInModal && <MustSignInModal
               setShowSignInModal={setShowSignInModal}
               setShowLandingPageModal={setShowLandingPageModal}

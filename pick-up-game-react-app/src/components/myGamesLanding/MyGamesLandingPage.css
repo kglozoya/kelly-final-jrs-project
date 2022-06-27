@@ -50,6 +50,15 @@
   padding-top: 1rem;
 }
 
+.mygames-landing-root .mygame-card-container .my-game-schedule{
+  text-transform: capitalize;
+  font-family: "Pacifico", cursive;
+  font-size: 2.5rem;
+  font-weight: lighter;
+  margin-top: .25rem;
+  margin-bottom: 1rem;
+}
+
 .mygames-landing-root .post-button {
   display: block;
   margin: 3rem auto 3rem auto;

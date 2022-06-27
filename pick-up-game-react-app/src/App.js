@@ -81,7 +81,7 @@ function App () {
               <Route path="/sport" element={<UpcomingGamesLandingPage />}></Route>
               <Route path="/sport/:sport" element={<UpcomingGamesLandingPage />}></Route>
  
-              <Route path="/create-game" element={<CreateGameLandingPage />}></Route>
+              <Route path="/create-game/:sport" element={<CreateGameLandingPage />}></Route>
               <Route path="/loading" element={<Loading />}></Route>
 
               <Route path="*" element={<div>404 - page does not exist</div>}></Route>
